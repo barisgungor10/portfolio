@@ -274,14 +274,29 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-      <section 
-        id="home" 
-        className="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c')`
-        }}
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden" // MODIFIED: Removed image bg classes, added overflow-hidden
       >
-        <div className="text-center text-white z-10 px-4">
+        {/* ADDED: Video element */}
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 object-cover -z-10"
+        >
+          {/* The path to the video in the public folder */}
+          <source src={process.env.PUBLIC_URL + '/11904054_2560_1440_24fps.mp4'} type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+        
+        {/* ADDED: Overlay div for text readability, similar to the previous linear-gradient */}
+        {/* This creates a semi-transparent black layer over the video */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-0"></div>
+
+        {/* Content container: Ensure it's positioned above the video and overlay. */}
+        {/* The 'relative' class here helps ensure the z-index behaves as expected. */}
+        <div className="text-center text-white z-10 px-4 relative"> 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
             Barış Güngör
           </h1>
