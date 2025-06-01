@@ -286,7 +286,7 @@ const App = () => {
           className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 object-cover -z-10"
         >
           {/* The path to the video in the public folder */}
-          <source src={process.env.PUBLIC_URL + '/11904054_2560_1440_24fps.mp4'} type="video/mp4" />
+          <source src={'11904054_2560_1440_24fps.mp4'} type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
         
