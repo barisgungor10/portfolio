@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react"; // This line was already present
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -206,6 +206,7 @@ const App = () => {
 
   return (
     <div className={`min-h-screen ${themeClasses.body} transition-colors duration-300`}>
+      <Analytics /> {/* Vercel Analytics component added here */}
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 ${themeClasses.nav} z-50 transition-colors duration-300`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
